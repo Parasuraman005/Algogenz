@@ -7,7 +7,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/common.css" />
+    <link rel="stylesheet" href="assets/css/members.css" />
   </head>
   <body data-page="members">
     <div class="background-grid" aria-hidden="true"></div>
@@ -23,7 +24,7 @@
             <li><a href="gallery.html">Gallery</a></li>
             <li><a href="events.html">Events</a></li>
             <li><a href="members.html">Members</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="achievement.html">Achievements</a></li>
           </ul>
         </nav>
       </div>
@@ -49,7 +50,7 @@
               <div class="member-image">
                 <img src="img/baskari " alt=">Ms.BASKARI" loading="lazy" />
               </div>
-              <h3><a href="https://instagram.com/" target="_blank" rel="noopener">Ms.BASKARI</a></h3>
+              <h3><a href="https://instagram.com/" target="_blank" rel="noopener"> Ms.BASKARI  </a></h3>
               <p>STAFF COORDINATOR </p>
             </article>
           </div>
@@ -129,6 +130,46 @@
            
           </div>
         </section>
+
+        <!-- Joined Members Section -->
+        <section class="members-section" id="joined-members">
+          <h2 class="section-subtitle">Joined Members</h2>
+          <p class="section-description">Newly joined members appear here after submitting the form.</p>
+
+                     <div class="card" style="margin-bottom:16px;">
+             <button id="join-toggle" class="btn">Join the Club</button>
+             <div id="success-message" class="success-message">Joined successfully! Welcome to AlgoGenz Club! 🎉</div>
+             <form id="join-form" style="display:none; margin-top:12px;">
+              <div class="form-row">
+                <label for="jm-name">Name</label>
+                <input id="jm-name" name="name" type="text" placeholder="Your full name" required />
+              </div>
+              <div class="form-row">
+                <label for="jm-dept">Department</label>
+                <input id="jm-dept" name="dept" type="text" placeholder="e.g., AIML,AI&DS,CSE" required />
+              </div>
+                  <div class="form-row">
+                 <label for="jm-reg">Reg. No</label>
+                 <input id="jm-reg" name="regNo" type="text" placeholder="Registration number" required />
+               </div>
+               <div class="form-row">
+                 <label for="jm-year">Year</label>
+                 <select id="jm-year" name="year" required>
+                   <option value="" disabled selected>Select year</option>
+                   <option value="I">I</option>
+                   <option value="II">II</option>
+                   <option value="III">III</option>
+                   <option value="IV">IV</option>
+                 </select>
+               </div>
+              <div class="form-row">
+                <button type="submit" class="btn">Submit</button>
+              </div>
+            </form>
+          </div>
+
+          <div id="joined-list"></div>
+        </section>
       </div>
     </main>
 
@@ -139,6 +180,7 @@
     </footer>
 
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/members.js"></script>
   </body>
 </html>
 

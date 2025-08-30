@@ -1,0 +1,119 @@
+/* Home Page Specific Styles */
+
+/* Typing Text Animation */
+.typing-text {
+  font-family: Inter, sans-serif;
+  font-size: 18px;
+  color: var(--pri);
+  font-weight: 600;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid var(--primary);
+  animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite, gradient-shift 4s ease-in-out infinite;
+  margin: 0 20px;
+  text-shadow: 0 0 10px rgba(0, 229, 255, 0.4);
+  background: linear-gradient(45deg, var(--pri), var(--secondary), var(--accent));
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite, gradient-shift 4s ease-in-out infinite;
+}
+
+.typing-text-2 {
+  animation: typing 3s steps(40, end) 1.5s both, blink-caret 0.75s step-end infinite 1.5s both, gradient-shift 4s ease-in-out infinite 1.5s both;
+  opacity: 0;
+  animation-fill-mode: forwards;
+  background: linear-gradient(45deg, var(--accent), var(--pri), var(--secondary));
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.typing-text .typing-cursor {
+  display: inline-block;
+  width: 0;
+  animation: typing 3s steps(40, end) forwards;
+}
+
+.typing-text-2 .typing-cursor {
+  animation: typing 3s steps(40, end) 1.5s forwards;
+}
+
+@keyframes typing {
+  from { 
+    width: 0; 
+    opacity: 1;
+  }
+  to { 
+    width: 100%; 
+    opacity: 1;
+  }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: var(--primary); }
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Enhanced cursor with gradient */
+.typing-text::after,
+.typing-text-2::after {
+  content: '';
+  position: absolute;
+  right: -3px;
+  top: 0;
+  height: 100%;
+  width: 3px;
+  background: linear-gradient(45deg, var(--primary), var(--secondary), var(--accent));
+  animation: blink-caret 0.75s step-end infinite;
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(0, 229, 255, 0.6);
+}
+
+/* Smooth fade-in effect for second text */
+.typing-text-2 {
+  transition: opacity 0.5s ease-in-out;
+}
+
+.typing-text-2.animate {
+  opacity: 1;
+}
+
+/* Coin flip slider */
+.coin-slider { perspective: 1000px; }
+.coin-card { width: 240px; height: 240px; position: relative; transform-style: preserve-3d; transition: transform 900ms cubic-bezier(.2,.6,.2,1); border-radius: 50%; box-shadow: 0 10px 30px rgba(0,255,231,.25); border: 3px solid rgba(0,255,231,.6); }
+.coin-face { position: absolute; inset: 0; backface-visibility: hidden; border-radius: 50%; background-size: cover; background-position: center; }
+.coin-front { background-image: url('img/club.png'); }
+.coin-back { background-image: url('https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=800&auto=format&fit=crop'); transform: rotateY(180deg); }
+.coin-card.flip { transform: rotateY(180deg); }
+
+/* Responsive adjustments for typing text */
+@media (max-width: 768px) {
+  .typing-text {
+    font-size: 16px;
+    margin: 0 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .typing-text {
+    font-size: 14px;
+    margin: 0 10px;
+  }
+}
